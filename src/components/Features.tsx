@@ -25,7 +25,7 @@ const features = [
 
 export const Features = () => {
   return (
-    <div className="container py-24">
+    <div className="container py-16">
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
         {features.map((feature) => (
           <div

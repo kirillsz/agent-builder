@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
   return (
-    <div className="container flex flex-col items-center justify-center space-y-8 py-32 text-center animate-fade-in">
+    <div className="container flex flex-col items-center justify-center space-y-8 py-24 text-center animate-fade-in">
       <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
         Build AI Agents with{" "}
         <span className="text-emerald-500">No Code</span>
