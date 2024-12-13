@@ -1,24 +1,69 @@
-import { Bot } from "lucide-react";
+import { Bot, Database, Shield, Rocket, ChartBar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const templates = [
+  {
+    title: "Liquidity Pool Optimizer Agent",
+    description: "Automated LP optimization and yield maximization",
+    category: "advanced",
+    arcRequired: "200 ARC",
+    icon: Database,
+  },
+  {
+    title: "MEV Protection Agent",
+    description: "Protect transactions from MEV exploitation",
+    category: "intermediate",
+    arcRequired: "150 ARC",
+    icon: Shield,
+  },
+  {
+    title: "SPL Token Launch Assistant Agent",
+    description: "Streamline token launches on Solana",
+    category: "intermediate",
+    arcRequired: "175 ARC",
+    icon: Rocket,
+  },
+  {
+    title: "NFT Market Intelligence Agent",
+    description: "Real-time NFT market analysis and insights",
+    category: "advanced",
+    arcRequired: "225 ARC",
+    icon: ChartBar,
+  },
+  {
+    title: "Real Estate Investment Analyzer Agent",
+    description: "On-chain real estate investment analysis",
+    category: "advanced",
+    arcRequired: "250 ARC",
+    icon: Database,
+  },
+  {
+    title: "Market Opportunity Analyzer Agent",
+    description: "Identify and analyze market opportunities",
+    category: "intermediate",
+    arcRequired: "175 ARC",
+    icon: Database,
+  },
   {
     title: "DeFi Trading Bot",
     description: "Automated trading with customizable strategies",
     category: "intermediate",
     arcRequired: "100 ARC",
+    icon: Bot,
   },
   {
     title: "DAO Governance Agent",
     description: "Automated proposal analysis and voting",
     category: "beginner",
     arcRequired: "50 ARC",
+    icon: Bot,
   },
   {
     title: "Market Analysis Agent",
     description: "Real-time market data analysis and reporting",
     category: "advanced",
     arcRequired: "150 ARC",
+    icon: Bot,
   },
 ];
 
@@ -39,7 +84,7 @@ export const Templates = () => {
             className="group rounded-lg border border-gray-800 bg-card p-6 transition-colors hover:border-gray-700 animate-fade-in"
           >
             <div className="flex items-center gap-4 mb-4">
-              <Bot className="h-8 w-8 text-emerald-500" />
+              <template.icon className="h-8 w-8 text-emerald-500" />
               <Badge className={categoryColors[template.category as keyof typeof categoryColors]}>
                 {template.category}
               </Badge>
