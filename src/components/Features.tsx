@@ -1,25 +1,25 @@
-import { Bot, Cpu, Shield, Zap } from "lucide-react";
+import { Bot, Code2, Coins, Database } from "lucide-react";
 
 const features = [
   {
-    title: "Visual Agent Builder",
-    description: "Drag-and-drop interface for creating AI agents without coding",
+    title: "AI Agents",
+    description: "Build custom AI agents without code",
     icon: Bot,
   },
   {
     title: "Rust-Powered",
-    description: "Built with Rust for maximum performance and reliability",
-    icon: Zap,
+    description: "Built on reliable Rust infrastructure",
+    icon: Code2,
   },
   {
-    title: "Blockchain Integration",
-    description: "Seamlessly integrated with Solana blockchain",
-    icon: Cpu,
+    title: "Decentralized",
+    description: "Runs on Solana blockchain",
+    icon: Database,
   },
   {
-    title: "Enterprise Security",
-    description: "Bank-grade security for your AI agents",
-    icon: Shield,
+    title: "ARC Tokens",
+    description: "Powered by ARC token economy",
+    icon: Coins,
   },
 ];
 
@@ -30,13 +30,13 @@ export const Features = () => {
         {features.map((feature) => (
           <div
             key={feature.title}
-            className="relative overflow-hidden rounded-lg border bg-background p-6 hover:shadow-lg transition-shadow animate-fade-in"
+            className="flex flex-col items-center text-center space-y-4 animate-fade-in"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-              <feature.icon className="h-6 w-6 text-primary" />
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10">
+              <feature.icon className="h-8 w-8 text-emerald-500" />
             </div>
-            <h3 className="mt-4 text-xl font-bold">{feature.title}</h3>
-            <p className="mt-2 text-muted-foreground">{feature.description}</p>
+            <h3 className="text-xl font-bold">{feature.title}</h3>
+            <p className="text-muted-foreground">{feature.description}</p>
           </div>
         ))}
       </div>
