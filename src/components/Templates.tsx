@@ -2,13 +2,16 @@ import { Bot, Database, Shield, Rocket, ChartBar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Connection, clusterApiUrl, PublicKey } from '@solana/web3.js';
 import { DeFiTradingContract } from "../contracts/DeFiTradingContract";
+import { GoverningContract } from "../contracts/GoverningContract";
 import { useToast } from "@/components/ui/use-toast";
 
-// Initialize Solana connection and contract
+// Initialize Solana connection and contracts
 const connection = new Connection(clusterApiUrl('devnet'));
-// Using a valid devnet program ID (this is a placeholder - replace with your actual deployed program ID)
-const programId = new PublicKey('11111111111111111111111111111111');
-const tradingContract = new DeFiTradingContract(connection, programId);
+// Using a valid devnet program ID (this is a placeholder - replace with your actual deployed program IDs)
+const tradingProgramId = new PublicKey('11111111111111111111111111111111');
+const governingProgramId = new PublicKey('11111111111111111111111111111111');
+const tradingContract = new DeFiTradingContract(connection, tradingProgramId);
+const governingContract = new GoverningContract(connection, governingProgramId);
 
 const templates = [
   {
@@ -86,7 +89,7 @@ const categoryColors = {
 export const Templates = () => {
   const { toast } = useToast();
 
-  const handleTemplateClick = (template: typeof templates[0]) => {
+  const handleTemplateClick = async (template: typeof templates[0]) => {
     if (template.title === "DeFi Trading Bot") {
       toast({
         title: "DeFi Trading Bot Selected",
@@ -94,8 +97,26 @@ export const Templates = () => {
         duration: 3000,
       });
       
-      // Here you can add additional logic for the DeFi Trading Bot
-      console.log("DeFi Trading Bot clicked:", template);
+      try {
+        // Create agent config for the DeFi bot
+        const config = {
+          owner: new PublicKey('11111111111111111111111111111111'), // Replace with actual owner
+          description: "DeFi Trading Bot Instance",
+          inputFormat: "JSON",
+          outputFormat: "JSON"
+        };
+        
+        await governingContract.createAgent(config);
+        
+        console.log("DeFi Trading Bot clicked:", template);
+      } catch (error) {
+        console.error("Error creating DeFi bot agent:", error);
+        toast({
+          title: "Error",
+          description: "Failed to initialize DeFi trading bot",
+          duration: 3000,
+        });
+      }
     }
   };
 
