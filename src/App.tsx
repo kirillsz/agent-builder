@@ -12,6 +12,7 @@ import MarketAnalysisFeatures from "./pages/MarketAnalysisFeatures";
 import DAOGovernanceFeatures from "./pages/DAOGovernanceFeatures";
 import NFTMarketFeatures from "./pages/NFTMarketFeatures";
 import LiquidityPoolFeatures from "./pages/LiquidityPoolFeatures";
+import MEVProtectionFeatures from "./pages/MEVProtectionFeatures";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
             <Route path="/dao-governance-features" element={<DAOGovernanceFeatures />} />
             <Route path="/nft-market-features" element={<NFTMarketFeatures />} />
             <Route path="/liquidity-pool-features" element={<LiquidityPoolFeatures />} />
+            <Route path="/mev-protection-features" element={<MEVProtectionFeatures />} />
           </Routes>
         </BrowserRouter>
       </WalletProvider>
