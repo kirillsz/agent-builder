@@ -8,13 +8,6 @@ export const categoryColors = {
 
 export const templates = [
   {
-    title: "Market Analysis Agent",
-    description: "Create AI agents for market analysis and trading signals",
-    icon: ChartBar,
-    category: "advanced",
-    arcRequired: ".1 SOL"
-  },
-  {
     title: "DAO Governance Agent",
     description: "Automate DAO governance and proposal management",
     icon: Brain,
