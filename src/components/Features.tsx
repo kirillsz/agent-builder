@@ -17,8 +17,8 @@ const features = [
     icon: Database,
   },
   {
-    title: "ARC Tokens",
-    description: "Powered by ARC token economy",
+    title: "SOL Tokens",
+    description: "Powered by SOL token",
     icon: Coins,
   },
 ];
