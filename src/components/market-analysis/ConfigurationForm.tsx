@@ -48,14 +48,14 @@ export const ConfigurationForm = () => {
                 <FormLabel>Trading Pair</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className="bg-background">
                       <SelectValue placeholder="Select trading pair" />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
-                    <SelectItem value="SOL/USDC">SOL/USDC</SelectItem>
-                    <SelectItem value="BTC/USDC">BTC/USDC</SelectItem>
-                    <SelectItem value="ETH/USDC">ETH/USDC</SelectItem>
+                  <SelectContent className="bg-background border-2 border-border">
+                    <SelectItem value="SOL/USDC" className="hover:bg-accent focus:bg-accent">SOL/USDC</SelectItem>
+                    <SelectItem value="BTC/USDC" className="hover:bg-accent focus:bg-accent">BTC/USDC</SelectItem>
+                    <SelectItem value="ETH/USDC" className="hover:bg-accent focus:bg-accent">ETH/USDC</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />
@@ -70,17 +70,17 @@ export const ConfigurationForm = () => {
                 <FormLabel>Timeframe</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className="bg-background">
                       <SelectValue placeholder="Select timeframe" />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
-                    <SelectItem value="1m">1 Minute</SelectItem>
-                    <SelectItem value="5m">5 Minutes</SelectItem>
-                    <SelectItem value="15m">15 Minutes</SelectItem>
-                    <SelectItem value="1h">1 Hour</SelectItem>
-                    <SelectItem value="4h">4 Hours</SelectItem>
-                    <SelectItem value="1d">1 Day</SelectItem>
+                  <SelectContent className="bg-background border-2 border-border">
+                    <SelectItem value="1m" className="hover:bg-accent focus:bg-accent">1 Minute</SelectItem>
+                    <SelectItem value="5m" className="hover:bg-accent focus:bg-accent">5 Minutes</SelectItem>
+                    <SelectItem value="15m" className="hover:bg-accent focus:bg-accent">15 Minutes</SelectItem>
+                    <SelectItem value="1h" className="hover:bg-accent focus:bg-accent">1 Hour</SelectItem>
+                    <SelectItem value="4h" className="hover:bg-accent focus:bg-accent">4 Hours</SelectItem>
+                    <SelectItem value="1d" className="hover:bg-accent focus:bg-accent">1 Day</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />
@@ -95,15 +95,15 @@ export const ConfigurationForm = () => {
                 <FormLabel>Technical Indicators</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className="bg-background">
                       <SelectValue placeholder="Select indicators" />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
-                    <SelectItem value="sma">Simple Moving Average (SMA)</SelectItem>
-                    <SelectItem value="ema">Exponential Moving Average (EMA)</SelectItem>
-                    <SelectItem value="rsi">Relative Strength Index (RSI)</SelectItem>
-                    <SelectItem value="macd">MACD</SelectItem>
+                  <SelectContent className="bg-background border-2 border-border">
+                    <SelectItem value="sma" className="hover:bg-accent focus:bg-accent">Simple Moving Average (SMA)</SelectItem>
+                    <SelectItem value="ema" className="hover:bg-accent focus:bg-accent">Exponential Moving Average (EMA)</SelectItem>
+                    <SelectItem value="rsi" className="hover:bg-accent focus:bg-accent">Relative Strength Index (RSI)</SelectItem>
+                    <SelectItem value="macd" className="hover:bg-accent focus:bg-accent">MACD</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />
@@ -118,15 +118,15 @@ export const ConfigurationForm = () => {
                 <FormLabel>Update Frequency</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className="bg-background">
                       <SelectValue placeholder="Select update frequency" />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
-                    <SelectItem value="realtime">Real-time</SelectItem>
-                    <SelectItem value="1min">Every minute</SelectItem>
-                    <SelectItem value="5min">Every 5 minutes</SelectItem>
-                    <SelectItem value="15min">Every 15 minutes</SelectItem>
+                  <SelectContent className="bg-background border-2 border-border">
+                    <SelectItem value="realtime" className="hover:bg-accent focus:bg-accent">Real-time</SelectItem>
+                    <SelectItem value="1min" className="hover:bg-accent focus:bg-accent">Every minute</SelectItem>
+                    <SelectItem value="5min" className="hover:bg-accent focus:bg-accent">Every 5 minutes</SelectItem>
+                    <SelectItem value="15min" className="hover:bg-accent focus:bg-accent">Every 15 minutes</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />
