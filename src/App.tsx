@@ -14,6 +14,7 @@ import DAOGovernanceFeatures from "./pages/DAOGovernanceFeatures";
 import NFTMarketFeatures from "./pages/NFTMarketFeatures";
 import LiquidityPoolFeatures from "./pages/LiquidityPoolFeatures";
 import MEVProtectionFeatures from "./pages/MEVProtectionFeatures";
+import AgentDashboard from "./pages/AgentDashboard";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/create-agent" element={<CreateAgent />} />
             <Route path="/marketplace" element={<Marketplace />} />
+            <Route path="/agent-dashboard" element={<AgentDashboard />} />
             <Route path="/defi-bot-features" element={<DeFiBotFeatures />} />
             <Route path="/real-estate-features" element={<RealEstateFeatures />} />
             <Route path="/market-analysis-features" element={<MarketAnalysisFeatures />} />
