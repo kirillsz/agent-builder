@@ -1,4 +1,4 @@
-import { Bot, Code2, Coins, Settings } from "lucide-react";
+import { Bot, Code2, Settings } from "lucide-react";
 
 const features = [
   {
@@ -16,17 +16,12 @@ const features = [
     description: "Powered by RIG framework",
     icon: Settings,
   },
-  {
-    title: "SOL Tokens",
-    description: "Powered by SOL + can be used with other SOL-based tokens",
-    icon: Coins,
-  },
 ];
 
 export const Features = () => {
   return (
     <div className="container py-16">
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {features.map((feature) => (
           <div
             key={feature.title}
