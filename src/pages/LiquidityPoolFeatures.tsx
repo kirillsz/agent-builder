@@ -1,71 +1,60 @@
 import React from 'react';
 import { Header } from "@/components/Header";
 import { motion } from 'framer-motion';
-import { 
-  Coins, 
-  TrendingUp, 
-  BarChart3, 
-  Settings, 
-  Shield, 
-  Zap,
-  Bot,
-  Code2,
-  Settings2,
-  Rocket
-} from 'lucide-react';
+import { Bot, Code2, Settings2, Rocket, Activity, LineChart, DollarSign, Target, Database, Zap } from 'lucide-react';
 import { FeatureCard } from '@/components/liquidity-pool/FeatureCard';
 
 const LiquidityPoolFeatures = () => {
   const features = [
     {
-      icon: Coins,
-      title: "Automated Pool Management",
-      description: "Smart rebalancing of liquidity positions across multiple pools for optimal yield generation."
-    },
-    {
-      icon: TrendingUp,
-      title: "Yield Optimization",
-      description: "Continuous monitoring and adjustment of positions to maximize returns while minimizing impermanent loss."
-    },
-    {
-      icon: BarChart3,
-      title: "Analytics Dashboard",
-      description: "Real-time metrics and performance tracking for your liquidity positions."
-    },
-    {
-      icon: Settings,
-      title: "Custom Parameters",
-      description: "Set your own risk parameters, rebalancing thresholds, and optimization strategies."
-    },
-    {
-      icon: Shield,
-      title: "Risk Management",
-      description: "Advanced protection against impermanent loss and market volatility."
-    },
-    {
-      icon: Zap,
-      title: "Fast Execution",
-      description: "High-speed position adjustments powered by Solana's rapid transaction processing."
-    },
-    {
       icon: Bot,
       title: "AI Agents",
-      description: "Build custom AI agents without code for automated liquidity management."
+      description: "Build custom AI agents without code for automated liquidity pool optimization."
     },
     {
       icon: Code2,
       title: "Rust-Powered",
-      description: "Built on reliable Rust infrastructure for maximum performance and security."
+      description: "Built on reliable Rust infrastructure for maximum efficiency."
     },
     {
       icon: Settings2,
       title: "RIG Framework",
-      description: "Powered by RIG framework for seamless integration and deployment."
+      description: "Powered by RIG framework for seamless integration."
     },
     {
       icon: Rocket,
       title: "Solana Integration",
-      description: "Native support for Solana-based liquidity pools and DEXes."
+      description: "Native support for Solana blockchain optimization."
+    },
+    {
+      icon: Activity,
+      title: "Real-Time Monitoring",
+      description: "Monitor liquidity pool performance in real-time."
+    },
+    {
+      icon: LineChart,
+      title: "APY Optimization",
+      description: "Maximize returns through intelligent APY optimization strategies."
+    },
+    {
+      icon: DollarSign,
+      title: "Fee Analysis",
+      description: "Comprehensive analysis of pool fees and rewards."
+    },
+    {
+      icon: Target,
+      title: "Smart Rebalancing",
+      description: "Automated pool rebalancing based on market conditions."
+    },
+    {
+      icon: Database,
+      title: "Multi-Pool Management",
+      description: "Manage and optimize multiple liquidity pools simultaneously."
+    },
+    {
+      icon: Zap,
+      title: "Impermanent Loss Protection",
+      description: "Advanced strategies to minimize impermanent loss."
     }
   ];
 
