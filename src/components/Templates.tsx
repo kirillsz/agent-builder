@@ -2,6 +2,7 @@ import { Bot, Database, Shield, Rocket, ChartBar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Connection, clusterApiUrl, PublicKey } from '@solana/web3.js';
 import { DeFiTradingContract } from "../contracts/DeFiTradingContract";
+import { useToast } from "@/components/ui/use-toast";
 
 // Initialize Solana connection and contract
 const connection = new Connection(clusterApiUrl('devnet'));
@@ -83,6 +84,21 @@ const categoryColors = {
 };
 
 export const Templates = () => {
+  const { toast } = useToast();
+
+  const handleTemplateClick = (template: typeof templates[0]) => {
+    if (template.title === "DeFi Trading Bot") {
+      toast({
+        title: "DeFi Trading Bot Selected",
+        description: "Initializing DeFi trading bot configuration...",
+        duration: 3000,
+      });
+      
+      // Here you can add additional logic for the DeFi Trading Bot
+      console.log("DeFi Trading Bot clicked:", template);
+    }
+  };
+
   return (
     <div className="container py-16">
       <h2 className="text-3xl font-bold mb-8">Templates</h2>
@@ -90,7 +106,8 @@ export const Templates = () => {
         {templates.map((template) => (
           <div
             key={template.title}
-            className="group rounded-lg border border-gray-800 bg-card p-6 transition-colors hover:border-gray-700 animate-fade-in"
+            className="group rounded-lg border border-gray-800 bg-card p-6 transition-colors hover:border-gray-700 animate-fade-in cursor-pointer"
+            onClick={() => handleTemplateClick(template)}
           >
             <div className="flex items-center gap-4 mb-4">
               <template.icon className="h-8 w-8 text-emerald-500" />
