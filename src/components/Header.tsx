@@ -31,7 +31,7 @@ export const Header = () => {
               href="https://github.com/drraghavendra/Agent-Accelerator" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
             >
               GitHub
             </a>
