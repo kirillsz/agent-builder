@@ -1,4 +1,4 @@
-import { Bot, Code2, Settings } from "lucide-react";
+import { Bot, Code2, Settings, Link } from "lucide-react";
 
 const features = [
   {
@@ -15,6 +15,11 @@ const features = [
     title: "RIG",
     description: "Powered by RIG framework",
     icon: Settings,
+  },
+  {
+    title: "Sol",
+    description: "Can be integrated with any Sol-based project",
+    icon: Link,
   },
 ];
 
