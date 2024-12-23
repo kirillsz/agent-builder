@@ -18,7 +18,7 @@ const features = [
   },
   {
     title: "SOL Tokens",
-    description: "Powered by SOL",
+    description: "Powered by SOL + can be used with other SOL-based tokens",
     icon: Coins,
   },
 ];
