@@ -1,3 +1,5 @@
+import { Database, Shield, Rocket, ChartBar, Bot } from "lucide-react";
+
 export const categoryColors = {
   beginner: "bg-green-500/10 text-green-500",
   intermediate: "bg-yellow-500/10 text-yellow-500",
