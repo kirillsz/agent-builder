@@ -69,8 +69,8 @@ export const Templates = () => {
         const config = {
           owner: new PublicKey('11111111111111111111111111111111'),
           description: "DAO Governance Agent Instance",
-          votingThreshold: 0.6,
-          quorumThreshold: 0.01
+          votingThreshold: 0.6, // 60% threshold for proposal passing
+          quorumThreshold: 0.01 // 1% quorum requirement
         };
         
         await governingContract.createAgent(config);
@@ -94,8 +94,10 @@ export const Templates = () => {
       
       try {
         const config = {
-          owner: new PublicKey('11111111111111111111111111111111'), // Replace with actual owner
+          owner: new PublicKey('11111111111111111111111111111111'),
           description: "DeFi Trading Bot Instance",
+          votingThreshold: 0.6,
+          quorumThreshold: 0.01,
           inputFormat: "JSON",
           outputFormat: "JSON"
         };
