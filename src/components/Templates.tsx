@@ -69,8 +69,8 @@ export const Templates = () => {
         const config = {
           owner: new PublicKey('11111111111111111111111111111111'),
           description: "DAO Governance Agent Instance",
-          votingThreshold: 0.6, // 60% threshold for proposal passing
-          quorumThreshold: 0.01 // 1% quorum requirement
+          votingThreshold: 0.6,
+          quorumThreshold: 0.01
         };
         
         await governingContract.createAgent(config);
@@ -142,6 +142,27 @@ export const Templates = () => {
           duration: 3000,
         });
       }
+    } else if (template.title === "Liquidity Pool Optimizer") {
+      toast({
+        title: "Liquidity Pool Optimizer Selected",
+        description: "Initializing liquidity pool optimizer...",
+        duration: 3000,
+      });
+      navigate('/liquidity-pool-features');
+    } else if (template.title === "MEV Protection Agent") {
+      toast({
+        title: "MEV Protection Agent Selected",
+        description: "Initializing MEV protection agent...",
+        duration: 3000,
+      });
+      navigate('/mev-protection-features');
+    } else if (template.title === "NFT Market Intelligence") {
+      toast({
+        title: "NFT Market Intelligence Selected",
+        description: "Initializing NFT market intelligence...",
+        duration: 3000,
+      });
+      navigate('/nft-market-features');
     }
   };
 

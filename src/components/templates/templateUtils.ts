@@ -1,73 +1,39 @@
-import { Database, Shield, Rocket, ChartBar, Bot } from "lucide-react";
-
-export const categoryColors = {
-  beginner: "bg-green-500/10 text-green-500",
-  intermediate: "bg-yellow-500/10 text-yellow-500",
-  advanced: "bg-red-500/10 text-red-500",
-};
+import { Bot, Database, Shield, Rocket, ChartBar, Coins, Brain } from "lucide-react";
 
 export const templates = [
   {
-    title: "Liquidity Pool Optimizer Agent",
-    description: "Automated LP optimization and yield maximization",
-    category: "advanced",
-    arcRequired: "200 ARC",
-    icon: Database,
-  },
-  {
-    title: "MEV Protection Agent",
-    description: "Protect transactions from MEV exploitation",
-    category: "intermediate",
-    arcRequired: "150 ARC",
-    icon: Shield,
-  },
-  {
-    title: "SPL Token Launch Assistant Agent",
-    description: "Streamline token launches on Solana",
-    category: "intermediate",
-    arcRequired: "175 ARC",
-    icon: Rocket,
-  },
-  {
-    title: "NFT Market Intelligence Agent",
-    description: "Real-time NFT market analysis and insights",
-    category: "advanced",
-    arcRequired: "225 ARC",
+    title: "Market Analysis Agent",
+    description: "Create AI agents for market analysis and trading signals",
     icon: ChartBar,
   },
   {
-    title: "Real Estate Investment Analyzer Agent",
-    description: "On-chain real estate investment analysis",
-    category: "advanced",
-    arcRequired: "250 ARC",
-    icon: Database,
-  },
-  {
-    title: "Market Opportunity Analyzer Agent",
-    description: "Identify and analyze market opportunities",
-    category: "intermediate",
-    arcRequired: "175 ARC",
-    icon: Database,
+    title: "DAO Governance Agent",
+    description: "Automate DAO governance and proposal management",
+    icon: Brain,
   },
   {
     title: "DeFi Trading Bot",
-    description: "Automated trading with customizable strategies",
-    category: "intermediate",
-    arcRequired: "100 ARC",
+    description: "Build automated trading bots for DeFi protocols",
     icon: Bot,
   },
   {
-    title: "DAO Governance Agent",
-    description: "Automated proposal analysis and voting",
-    category: "beginner",
-    arcRequired: "50 ARC",
-    icon: Bot,
+    title: "Real Estate Investment Analyzer Agent",
+    description: "Analyze real estate investment opportunities",
+    icon: Database,
   },
   {
-    title: "Market Analysis Agent",
-    description: "Real-time market data analysis and reporting",
-    category: "advanced",
-    arcRequired: "150 ARC",
-    icon: Bot,
+    title: "Liquidity Pool Optimizer",
+    description: "Optimize liquidity pool positions and yields",
+    icon: Coins,
+  },
+  {
+    title: "MEV Protection Agent",
+    description: "Protect transactions from MEV and frontrunning",
+    icon: Shield,
+  },
+  {
+    title: "NFT Market Intelligence",
+    description: "Track and analyze NFT market trends",
+    icon: Rocket,
   },
 ];
