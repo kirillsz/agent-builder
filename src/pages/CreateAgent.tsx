@@ -12,6 +12,8 @@ import { Switch } from "@/components/ui/switch";
 import { useToast } from "@/components/ui/use-toast";
 import { Header } from "@/components/Header";
 import { Slider } from "@/components/ui/slider";
+import { Card, CardContent } from "@/components/ui/card";
+import { Cpu, Zap, Target, Shield, Settings, Bot, Code, Network } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -75,10 +77,59 @@ const CreateAgent = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="container max-w-2xl py-16">
-        <h1 className="text-4xl font-bold mb-8">Create Custom Agent</h1>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <main className="container py-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div className="space-y-4">
+              <h1 className="text-4xl font-bold animate-fade-in">Create Custom Agent</h1>
+              <p className="text-muted-foreground text-lg">
+                Design and configure your AI agent with advanced capabilities and custom behaviors.
+              </p>
+              <div className="grid grid-cols-2 gap-4 mt-6">
+                <Card className="p-4 hover:border-primary transition-colors animate-fade-in">
+                  <CardContent className="space-y-2 p-0">
+                    <Cpu className="h-8 w-8 text-primary" />
+                    <h3 className="font-semibold">Intelligent Processing</h3>
+                    <p className="text-sm text-muted-foreground">Advanced AI algorithms for optimal performance</p>
+                  </CardContent>
+                </Card>
+                <Card className="p-4 hover:border-primary transition-colors animate-fade-in delay-100">
+                  <CardContent className="space-y-2 p-0">
+                    <Zap className="h-8 w-8 text-primary" />
+                    <h3 className="font-semibold">Fast Execution</h3>
+                    <p className="text-sm text-muted-foreground">Real-time processing and quick responses</p>
+                  </CardContent>
+                </Card>
+                <Card className="p-4 hover:border-primary transition-colors animate-fade-in delay-200">
+                  <CardContent className="space-y-2 p-0">
+                    <Target className="h-8 w-8 text-primary" />
+                    <h3 className="font-semibold">Precise Control</h3>
+                    <p className="text-sm text-muted-foreground">Fine-tune your agent's behavior</p>
+                  </CardContent>
+                </Card>
+                <Card className="p-4 hover:border-primary transition-colors animate-fade-in delay-300">
+                  <CardContent className="space-y-2 p-0">
+                    <Shield className="h-8 w-8 text-primary" />
+                    <h3 className="font-semibold">Secure Operations</h3>
+                    <p className="text-sm text-muted-foreground">Built-in security and protection</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg -z-10 animate-pulse" />
+              <img
+                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e"
+                alt="AI Agent Creation"
+                className="rounded-lg object-cover w-full h-full opacity-80"
+              />
+            </div>
+          </div>
+
+          <Card className="w-full max-w-2xl mx-auto animate-fade-in">
+            <CardContent className="p-6">
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <FormField
               control={form.control}
               name="name"
@@ -336,12 +387,46 @@ const CreateAgent = () => {
                 </FormItem>
               )}
             />
+                  
+                  <Button type="submit" className="w-full" disabled={isSubmitting}>
+                    <Bot className="mr-2 h-4 w-4" />
+                    {isSubmitting ? "Creating..." : "Create Agent"}
+                  </Button>
+                </form>
+              </Form>
+            </CardContent>
+          </Card>
 
-            <Button type="submit" className="w-full" disabled={isSubmitting}>
-              {isSubmitting ? "Creating..." : "Create Agent"}
-            </Button>
-          </form>
-        </Form>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="p-6 hover:border-primary transition-colors animate-fade-in">
+              <CardContent className="space-y-4 p-0">
+                <Code className="h-12 w-12 text-primary" />
+                <h3 className="text-xl font-semibold">Custom Logic</h3>
+                <p className="text-muted-foreground">
+                  Implement your own business rules and decision-making processes
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="p-6 hover:border-primary transition-colors animate-fade-in delay-100">
+              <CardContent className="space-y-4 p-0">
+                <Settings className="h-12 w-12 text-primary" />
+                <h3 className="text-xl font-semibold">Flexible Configuration</h3>
+                <p className="text-muted-foreground">
+                  Easily adjust parameters and behaviors to match your needs
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="p-6 hover:border-primary transition-colors animate-fade-in delay-200">
+              <CardContent className="space-y-4 p-0">
+                <Network className="h-12 w-12 text-primary" />
+                <h3 className="text-xl font-semibold">Integration Ready</h3>
+                <p className="text-muted-foreground">
+                  Connect with external systems and services seamlessly
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </main>
     </div>
   );
