@@ -18,7 +18,7 @@ export const Header = () => {
             <a href="/dashboard" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Dashboard
             </a>
-            <a href="/create" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a href="/create-agent" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Create Agent
             </a>
             <a href="/marketplace" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
