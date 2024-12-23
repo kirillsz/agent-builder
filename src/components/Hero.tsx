@@ -21,11 +21,7 @@ export const Hero = () => {
         >
           Start Building
         </Button>
-        <Button 
-          variant="outline" 
-          size="lg"
-          onClick={() => navigate("/agent-dashboard")}
-        >
+        <Button variant="outline" size="lg">
           View Templates
         </Button>
       </div>
