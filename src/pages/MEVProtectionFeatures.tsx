@@ -3,61 +3,62 @@ import { Header } from "@/components/Header";
 import { motion } from 'framer-motion';
 import { Shield, ShieldCheck, Lock, LockKeyhole, Bot, Code2, Settings2, Rocket, Zap, Activity } from 'lucide-react';
 import { FeatureCard } from '@/components/mev-protection/FeatureCard';
+import { CustomAgentForm } from '@/components/mev-protection/CustomAgentForm';
+
+const features = [
+  {
+    icon: Shield,
+    title: "Frontrunning Protection",
+    description: "Advanced protection against frontrunning attacks with real-time transaction monitoring."
+  },
+  {
+    icon: ShieldCheck,
+    title: "Sandwich Attack Prevention",
+    description: "Detect and prevent sandwich attacks before they impact your transactions."
+  },
+  {
+    icon: Lock,
+    title: "Transaction Privacy",
+    description: "Enhanced privacy features to protect your transaction details from MEV bots."
+  },
+  {
+    icon: LockKeyhole,
+    title: "Secure Routing",
+    description: "Private transaction routing through protected mempool channels."
+  },
+  {
+    icon: Bot,
+    title: "AI Agents",
+    description: "Build custom AI agents without code for automated MEV protection."
+  },
+  {
+    icon: Code2,
+    title: "Rust-Powered",
+    description: "Built on reliable Rust infrastructure for maximum security."
+  },
+  {
+    icon: Settings2,
+    title: "RIG Framework",
+    description: "Powered by RIG framework for seamless integration."
+  },
+  {
+    icon: Rocket,
+    title: "Solana Integration",
+    description: "Native support for Solana blockchain protection."
+  },
+  {
+    icon: Zap,
+    title: "Real-Time Monitoring",
+    description: "Instant detection and response to potential MEV threats."
+  },
+  {
+    icon: Activity,
+    title: "Performance Analytics",
+    description: "Detailed analytics on protected transactions and prevented attacks."
+  }
+];
 
 const MEVProtectionFeatures = () => {
-  const features = [
-    {
-      icon: Shield,
-      title: "Frontrunning Protection",
-      description: "Advanced protection against frontrunning attacks with real-time transaction monitoring."
-    },
-    {
-      icon: ShieldCheck,
-      title: "Sandwich Attack Prevention",
-      description: "Detect and prevent sandwich attacks before they impact your transactions."
-    },
-    {
-      icon: Lock,
-      title: "Transaction Privacy",
-      description: "Enhanced privacy features to protect your transaction details from MEV bots."
-    },
-    {
-      icon: LockKeyhole,
-      title: "Secure Routing",
-      description: "Private transaction routing through protected mempool channels."
-    },
-    {
-      icon: Bot,
-      title: "AI Agents",
-      description: "Build custom AI agents without code for automated MEV protection."
-    },
-    {
-      icon: Code2,
-      title: "Rust-Powered",
-      description: "Built on reliable Rust infrastructure for maximum security."
-    },
-    {
-      icon: Settings2,
-      title: "RIG Framework",
-      description: "Powered by RIG framework for seamless integration."
-    },
-    {
-      icon: Rocket,
-      title: "Solana Integration",
-      description: "Native support for Solana blockchain protection."
-    },
-    {
-      icon: Zap,
-      title: "Real-Time Monitoring",
-      description: "Instant detection and response to potential MEV threats."
-    },
-    {
-      icon: Activity,
-      title: "Performance Analytics",
-      description: "Detailed analytics on protected transactions and prevented attacks."
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -83,6 +84,8 @@ const MEVProtectionFeatures = () => {
               </motion.div>
             ))}
           </div>
+
+          <CustomAgentForm />
         </div>
       </main>
     </div>
