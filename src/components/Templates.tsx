@@ -170,6 +170,7 @@ export const Templates = () => {
         };
         
         await marketAnalysisContract.createAgent(config);
+        navigate('/market-analysis-features');
         
         console.log("Market Analysis Agent clicked:", template);
       } catch (error) {

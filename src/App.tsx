@@ -7,6 +7,7 @@ import { WalletProvider } from "@/components/WalletProvider";
 import Index from "./pages/Index";
 import DeFiBotFeatures from "./pages/DeFiBotFeatures";
 import RealEstateFeatures from "./pages/RealEstateFeatures";
+import MarketAnalysisFeatures from "./pages/MarketAnalysisFeatures";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/defi-bot-features" element={<DeFiBotFeatures />} />
             <Route path="/real-estate-features" element={<RealEstateFeatures />} />
+            <Route path="/market-analysis-features" element={<MarketAnalysisFeatures />} />
           </Routes>
         </BrowserRouter>
       </WalletProvider>
