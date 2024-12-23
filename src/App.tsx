@@ -10,6 +10,7 @@ import DeFiBotFeatures from "./pages/DeFiBotFeatures";
 import RealEstateFeatures from "./pages/RealEstateFeatures";
 import MarketAnalysisFeatures from "./pages/MarketAnalysisFeatures";
 import DAOGovernanceFeatures from "./pages/DAOGovernanceFeatures";
+import NFTMarketFeatures from "./pages/NFTMarketFeatures";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/real-estate-features" element={<RealEstateFeatures />} />
             <Route path="/market-analysis-features" element={<MarketAnalysisFeatures />} />
             <Route path="/dao-governance-features" element={<DAOGovernanceFeatures />} />
+            <Route path="/nft-market-features" element={<NFTMarketFeatures />} />
           </Routes>
         </BrowserRouter>
       </WalletProvider>
