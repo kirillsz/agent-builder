@@ -1,5 +1,6 @@
 import React from 'react';
 import { Shield, Vote, Users, Clock, Settings, LineChart } from 'lucide-react';
+import { Header } from "@/components/Header";
 import { FeatureCard } from "@/components/dao-governance/FeatureCard";
 import { CustomAgentForm } from "@/components/dao-governance/CustomAgentForm";
 import { GovernanceCalculator } from "@/components/dao-governance/GovernanceCalculator";
@@ -39,17 +40,25 @@ const DAOGovernanceFeatures = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto p-6 space-y-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {features.map((feature, index) => (
-          <FeatureCard key={index} {...feature} />
-        ))}
-      </div>
-      
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <CustomAgentForm />
-        <GovernanceCalculator />
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main className="pt-24">
+        <div className="container mx-auto px-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 animate-fade-in">
+            DAO Governance <span className="text-emerald-500">Features</span>
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {features.map((feature, index) => (
+              <FeatureCard key={index} {...feature} />
+            ))}
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+            <CustomAgentForm />
+            <GovernanceCalculator />
+          </div>
+        </div>
+      </main>
     </div>
   );
 };
