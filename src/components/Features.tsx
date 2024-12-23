@@ -1,4 +1,4 @@
-import { Bot, Code2, Coins, Database } from "lucide-react";
+import { Bot, Code2, Coins, Rig } from "lucide-react";
 
 const features = [
   {
@@ -12,9 +12,9 @@ const features = [
     icon: Code2,
   },
   {
-    title: "Decentralized",
-    description: "Runs on Solana blockchain",
-    icon: Database,
+    title: "RIG",
+    description: "Powered by RIG framework",
+    icon: Rig,
   },
   {
     title: "SOL Tokens",
