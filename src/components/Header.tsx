@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { Wallet } from "lucide-react";
 
 export const Header = () => {
+  const { wallet } = useWallet();
+
   return (
     <header className="fixed top-0 w-full border-b border-gray-800 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
       <div className="container flex h-16 items-center justify-between">
@@ -25,10 +29,7 @@ export const Header = () => {
             </a>
           </nav>
         </div>
-        <Button className="bg-emerald-500 hover:bg-emerald-600">
-          <Wallet className="mr-2 h-4 w-4" />
-          Connect Wallet
-        </Button>
+        <WalletMultiButton className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded" />
       </div>
     </header>
   );
