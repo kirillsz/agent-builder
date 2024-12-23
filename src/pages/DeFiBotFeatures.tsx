@@ -1,21 +1,22 @@
 import React from 'react';
 import { Activity, Settings, TrendingUp, Shield, History, BarChart } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Header } from '@/components/Header';
 
 const FeatureCard = ({ icon: Icon, title, description }: { 
   icon: React.ElementType;
   title: string;
   description: string;
 }) => (
-  <Card className="bg-white hover:bg-gray-50 transition-colors duration-300 cursor-pointer">
-    <CardContent className="p-6">
+  <Card className="group rounded-lg border border-gray-800 bg-card p-6 transition-colors hover:border-gray-700 animate-fade-in">
+    <CardContent className="p-0">
       <div className="flex items-start space-x-4">
-        <div className="mt-1">
-          <Icon className="h-6 w-6 text-blue-600" />
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/10">
+          <Icon className="h-6 w-6 text-emerald-500" />
         </div>
         <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
-          <p className="text-gray-600">{description}</p>
+          <h3 className="text-lg font-bold text-foreground mb-2">{title}</h3>
+          <p className="text-muted-foreground">{description}</p>
         </div>
       </div>
     </CardContent>
@@ -58,14 +59,19 @@ const DeFiBotFeatures = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-6xl mx-auto p-6">
-        <h1 className="text-4xl font-bold mb-8">DeFi Trading Bot Features</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <FeatureCard key={index} {...feature} />
-          ))}
+      <Header />
+      <main className="pt-24">
+        <div className="container mx-auto px-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 animate-fade-in">
+            DeFi Trading Bot <span className="text-emerald-500">Features</span>
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+            {features.map((feature, index) => (
+              <FeatureCard key={index} {...feature} />
+            ))}
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 };
