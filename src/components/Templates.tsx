@@ -7,6 +7,7 @@ import { RealEstateContract } from "../contracts/RealEstateContract";
 import { MarketAnalysisContract } from "../contracts/MarketAnalysisContract";
 import { useToast } from "@/components/ui/use-toast";
 import { useNavigate } from "react-router-dom";
+import { TimeFrame } from "../types/TimeFrame";
 
 // Initialize Solana connection and contracts
 const connection = new Connection(clusterApiUrl('devnet'));
@@ -126,6 +127,33 @@ export const Templates = () => {
         toast({
           title: "Error",
           description: "Failed to initialize market analysis agent",
+          duration: 3000,
+        });
+      }
+    } else if (template.title === "DAO Governance Agent") {
+      toast({
+        title: "DAO Governance Agent Selected",
+        description: "Initializing DAO governance agent...",
+        duration: 3000,
+      });
+      
+      try {
+        const config = {
+          owner: new PublicKey('11111111111111111111111111111111'),
+          description: "DAO Governance Agent Instance",
+          votingThreshold: 0.6,
+          quorumThreshold: 0.01
+        };
+        
+        await governingContract.createAgent(config);
+        navigate('/dao-governance-features');
+        
+        console.log("DAO Governance Agent clicked:", template);
+      } catch (error) {
+        console.error("Error creating DAO governance agent:", error);
+        toast({
+          title: "Error",
+          description: "Failed to initialize DAO governance agent",
           duration: 3000,
         });
       }
