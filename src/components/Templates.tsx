@@ -4,6 +4,7 @@ import { Connection, clusterApiUrl, PublicKey } from '@solana/web3.js';
 import { DeFiTradingContract } from "../contracts/DeFiTradingContract";
 import { GoverningContract } from "../contracts/GoverningContract";
 import { RealEstateContract } from "../contracts/RealEstateContract";
+import { MarketAnalysisContract } from "../contracts/MarketAnalysisContract";
 import { useToast } from "@/components/ui/use-toast";
 
 // Initialize Solana connection and contracts
@@ -11,10 +12,12 @@ const connection = new Connection(clusterApiUrl('devnet'));
 const tradingProgramId = new PublicKey('11111111111111111111111111111111');
 const governingProgramId = new PublicKey('11111111111111111111111111111111');
 const realEstateProgramId = new PublicKey('11111111111111111111111111111111');
+const marketAnalysisProgramId = new PublicKey('11111111111111111111111111111111');
 
 const tradingContract = new DeFiTradingContract(connection, tradingProgramId);
 const governingContract = new GoverningContract(connection, governingProgramId);
 const realEstateContract = new RealEstateContract(connection, realEstateProgramId);
+const marketAnalysisContract = new MarketAnalysisContract(connection, marketAnalysisProgramId);
 
 const templates = [
   {
@@ -101,7 +104,6 @@ export const Templates = () => {
       });
       
       try {
-        // Create agent config for the DeFi bot
         const config = {
           owner: new PublicKey('11111111111111111111111111111111'), // Replace with actual owner
           description: "DeFi Trading Bot Instance",
@@ -144,6 +146,33 @@ export const Templates = () => {
         toast({
           title: "Error",
           description: "Failed to initialize real estate investment analyzer",
+          duration: 3000,
+        });
+      }
+    } else if (template.title === "Market Analysis Agent") {
+      toast({
+        title: "Market Analysis Agent Selected",
+        description: "Initializing market analysis agent...",
+        duration: 3000,
+      });
+      
+      try {
+        const config = {
+          owner: new PublicKey('11111111111111111111111111111111'),
+          description: "Market Analysis Agent Instance",
+          tradingPair: "SOL/USDC",
+          timeframes: [0, 1, 2], // OneMinute, FiveMinutes, FifteenMinutes
+          indicators: ["SMA_20", "RSI_14"]
+        };
+        
+        await marketAnalysisContract.createAgent(config);
+        
+        console.log("Market Analysis Agent clicked:", template);
+      } catch (error) {
+        console.error("Error creating market analysis agent:", error);
+        toast({
+          title: "Error",
+          description: "Failed to initialize market analysis agent",
           duration: 3000,
         });
       }
