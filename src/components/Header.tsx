@@ -27,6 +27,14 @@ export const Header = () => {
             <a href="/docs" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Documentation
             </a>
+            <a 
+              href="https://github.com/drraghavendra/Agent-Accelerator" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              GitHub
+            </a>
           </nav>
         </div>
         <WalletMultiButton className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded" />
