@@ -25,7 +25,7 @@ export const Header = () => {
               Marketplace
             </a>
             <a 
-              href="https://github.com/drraghavendra/Agent-Accelerator" 
+              href="https://github.com/j3bruins/agent-accelerator" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
