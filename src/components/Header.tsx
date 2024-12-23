@@ -24,9 +24,6 @@ export const Header = () => {
             <a href="/marketplace" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Marketplace
             </a>
-            <a href="/docs" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Documentation
-            </a>
             <a 
               href="https://github.com/drraghavendra/Agent-Accelerator" 
               target="_blank" 
