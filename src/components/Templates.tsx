@@ -6,6 +6,7 @@ import { GoverningContract } from "../contracts/GoverningContract";
 import { RealEstateContract } from "../contracts/RealEstateContract";
 import { MarketAnalysisContract } from "../contracts/MarketAnalysisContract";
 import { useToast } from "@/components/ui/use-toast";
+import { useNavigate } from "react-router-dom";
 
 // Initialize Solana connection and contracts
 const connection = new Connection(clusterApiUrl('devnet'));
@@ -94,6 +95,7 @@ const categoryColors = {
 
 export const Templates = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleTemplateClick = async (template: typeof templates[0]) => {
     if (template.title === "DeFi Trading Bot") {
@@ -112,6 +114,7 @@ export const Templates = () => {
         };
         
         await governingContract.createAgent(config);
+        navigate('/defi-bot-features');
         
         console.log("DeFi Trading Bot clicked:", template);
       } catch (error) {
