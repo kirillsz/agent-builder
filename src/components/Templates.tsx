@@ -3,15 +3,18 @@ import { Badge } from "@/components/ui/badge";
 import { Connection, clusterApiUrl, PublicKey } from '@solana/web3.js';
 import { DeFiTradingContract } from "../contracts/DeFiTradingContract";
 import { GoverningContract } from "../contracts/GoverningContract";
+import { RealEstateContract } from "../contracts/RealEstateContract";
 import { useToast } from "@/components/ui/use-toast";
 
 // Initialize Solana connection and contracts
 const connection = new Connection(clusterApiUrl('devnet'));
-// Using a valid devnet program ID (this is a placeholder - replace with your actual deployed program IDs)
 const tradingProgramId = new PublicKey('11111111111111111111111111111111');
 const governingProgramId = new PublicKey('11111111111111111111111111111111');
+const realEstateProgramId = new PublicKey('11111111111111111111111111111111');
+
 const tradingContract = new DeFiTradingContract(connection, tradingProgramId);
 const governingContract = new GoverningContract(connection, governingProgramId);
+const realEstateContract = new RealEstateContract(connection, realEstateProgramId);
 
 const templates = [
   {
@@ -114,6 +117,33 @@ export const Templates = () => {
         toast({
           title: "Error",
           description: "Failed to initialize DeFi trading bot",
+          duration: 3000,
+        });
+      }
+    } else if (template.title === "Real Estate Investment Analyzer Agent") {
+      toast({
+        title: "Real Estate Investment Analyzer Selected",
+        description: "Initializing real estate investment analyzer...",
+        duration: 3000,
+      });
+      
+      try {
+        const config = {
+          owner: new PublicKey('11111111111111111111111111111111'),
+          description: "Real Estate Investment Analyzer Instance",
+          targetArea: "San Francisco",
+          desiredCapRate: 0.05,
+          minRoi: 0.15
+        };
+        
+        await realEstateContract.createAgent(config);
+        
+        console.log("Real Estate Investment Analyzer clicked:", template);
+      } catch (error) {
+        console.error("Error creating real estate analyzer agent:", error);
+        toast({
+          title: "Error",
+          description: "Failed to initialize real estate investment analyzer",
           duration: 3000,
         });
       }
