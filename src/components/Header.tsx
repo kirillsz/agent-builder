@@ -15,8 +15,8 @@ export const Header = () => {
             <span className="font-bold text-xl">Agent Accelerator</span>
           </a>
           <nav className="hidden md:flex items-center gap-6">
-            <a href="/dashboard" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Dashboard
+            <a href="/agent-dashboard" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Agent Dashboard
             </a>
             <a href="/create-agent" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Create Agent
