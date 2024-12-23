@@ -1,40 +1,41 @@
 import React from 'react';
-import { LineChart, Clock, Activity, Settings, BarChart2, Layers } from 'lucide-react';
 import { Header } from '@/components/Header';
-import { FeatureCard } from '@/components/market-analysis/FeatureCard';
-import { ConfigurationForm } from '@/components/market-analysis/ConfigurationForm';
+import { Code, LineChart, Clock, Settings, Activity, Lock } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Card, CardContent } from '@/components/ui/card';
+import { MarketAnalysisForm } from '@/components/market-analysis/MarketAnalysisForm';
 
 const MarketAnalysisFeatures = () => {
   const features = [
     {
-      icon: Clock,
+      icon: <Code className="w-12 h-12 text-blue-500" />,
+      title: "Configurable Trading Agents",
+      description: "Create custom trading agents with flexible configurations for different trading pairs, timeframes, and indicators."
+    },
+    {
+      icon: <LineChart className="w-12 h-12 text-green-500" />,
+      title: "Real-Time Market Analysis",
+      description: "Monitor market data across multiple timeframes with built-in support for technical indicators and opportunity detection."
+    },
+    {
+      icon: <Activity className="w-12 h-12 text-purple-500" />,
+      title: "Advanced Opportunity Detection",
+      description: "Implement sophisticated trading strategies with customizable opportunity criteria and automated signal generation."
+    },
+    {
+      icon: <Clock className="w-12 h-12 text-orange-500" />,
       title: "Multi-Timeframe Analysis",
-      description: "Monitor market data across multiple timeframes from 1-minute to daily charts for comprehensive market insight."
+      description: "Analyze markets across different timeframes from 1-minute to daily charts for comprehensive market insights."
     },
     {
-      icon: Activity,
-      title: "Advanced Market Data",
-      description: "Track OHLCV (Open, High, Low, Close, Volume) data with precise timestamp recording for accurate analysis."
+      icon: <Settings className="w-12 h-12 text-indigo-500" />,
+      title: "Instance Management",
+      description: "Deploy and manage multiple agent instances with real-time status tracking and opportunity monitoring."
     },
     {
-      icon: LineChart,
-      title: "Technical Indicators",
-      description: "Customize and implement multiple technical indicators like SMA and RSI for enhanced trading decisions."
-    },
-    {
-      icon: Layers,
-      title: "Multi-Pair Trading",
-      description: "Monitor and analyze multiple trading pairs simultaneously with dedicated configuration for each."
-    },
-    {
-      icon: BarChart2,
-      title: "Real-Time Updates",
-      description: "Continuous market data updates across all configured timeframes and trading pairs."
-    },
-    {
-      icon: Settings,
-      title: "Configurable Agents",
-      description: "Create and manage multiple analysis agents with custom indicators and timeframe combinations."
+      icon: <Lock className="w-12 h-12 text-red-500" />,
+      title: "Secure On-Chain Execution",
+      description: "Built on Solana for high-speed, secure, and decentralized trading agent operations."
     }
   ];
 
@@ -46,12 +47,35 @@ const MarketAnalysisFeatures = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 animate-fade-in">
             Market Analysis <span className="text-emerald-500">Features</span>
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {features.map((feature, index) => (
-              <FeatureCard key={index} {...feature} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex flex-col items-center text-center">
+                      <div className="mb-4">
+                        {feature.icon}
+                      </div>
+                      <h3 className="text-xl font-semibold mb-2">
+                        {feature.title}
+                      </h3>
+                      <p className="text-muted-foreground">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
-          <ConfigurationForm />
+          
+          <MarketAnalysisForm />
         </div>
       </main>
     </div>
