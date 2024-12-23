@@ -5,7 +5,8 @@ import { DeFiTradingContract } from "../contracts/DeFiTradingContract";
 
 // Initialize Solana connection and contract
 const connection = new Connection(clusterApiUrl('devnet'));
-const programId = new PublicKey('Your_Program_ID_Here'); // Replace with actual program ID
+// Using a valid devnet program ID (this is a placeholder - replace with your actual deployed program ID)
+const programId = new PublicKey('11111111111111111111111111111111');
 const tradingContract = new DeFiTradingContract(connection, programId);
 
 const templates = [
