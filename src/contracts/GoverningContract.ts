@@ -2,27 +2,7 @@ import { Connection, PublicKey, Transaction, TransactionInstruction } from '@sol
 import { Buffer } from 'buffer';
 import { TimeFrame } from '../types/TimeFrame';
 
-interface VotingPower {
-  voter: PublicKey;
-  votingPower: number;
-  delegatedTo?: PublicKey;
-}
-
-interface Proposal {
-  id: number;
-  proposer: PublicKey;
-  title: string;
-  description: string;
-  startTime: number;
-  endTime: number;
-  votingOptions: string[];
-  votes: Map<string, number>;
-  executed: boolean;
-  targetAccount?: PublicKey;
-  transferLamports?: number;
-}
-
-interface AgentConfig {
+export interface AgentConfig {
   owner: PublicKey;
   description: string;
   votingThreshold: number;
@@ -59,7 +39,33 @@ export class GoverningContract {
     return 'transaction_signature';
   }
 
-  async createProposal(proposal: Omit<Proposal, 'id' | 'votes' | 'executed'>): Promise<string> {
+  async createAgentInstance(agentId: number): Promise<string> {
+    const instruction = new TransactionInstruction({
+      keys: [
+        // Add necessary account metas
+      ],
+      programId: this.programId,
+      data: Buffer.from([AgentInstruction.CreateAgentInstance, agentId])
+    });
+
+    const transaction = new Transaction().add(instruction);
+    return 'transaction_signature';
+  }
+
+  async updateAgentInstanceStatus(agentId: number, instanceId: number, status: number): Promise<string> {
+    const instruction = new TransactionInstruction({
+      keys: [
+        // Add necessary account metas
+      ],
+      programId: this.programId,
+      data: Buffer.from([AgentInstruction.UpdateAgentInstanceStatus, agentId, instanceId, status])
+    });
+
+    const transaction = new Transaction().add(instruction);
+    return 'transaction_signature';
+  }
+
+  async createProposal(proposal: any): Promise<string> {
     const instruction = new TransactionInstruction({
       keys: [
         // Add necessary account metas
@@ -78,7 +84,7 @@ export class GoverningContract {
         // Add necessary account metas
       ],
       programId: this.programId,
-      data: Buffer.from([AgentInstruction.VoteOnProposal, ...this.serializeVote(proposalId, voteIndex)])
+      data: Buffer.from([AgentInstruction.VoteOnProposal, proposalId, voteIndex])
     });
 
     const transaction = new Transaction().add(instruction);
@@ -91,7 +97,7 @@ export class GoverningContract {
         // Add necessary account metas
       ],
       programId: this.programId,
-      data: Buffer.from([AgentInstruction.ExecuteProposal, ...this.serializeProposalExecution(proposalId)])
+      data: Buffer.from([AgentInstruction.ExecuteProposal, proposalId])
     });
 
     const transaction = new Transaction().add(instruction);
@@ -104,7 +110,7 @@ export class GoverningContract {
         // Add necessary account metas
       ],
       programId: this.programId,
-      data: Buffer.from([AgentInstruction.DelegateVotingPower, ...this.serializeDelegation(delegateTo)])
+      data: Buffer.from([AgentInstruction.DelegateVotingPower, ...delegateTo.toBuffer()])
     });
 
     const transaction = new Transaction().add(instruction);
@@ -117,7 +123,7 @@ export class GoverningContract {
         // Add necessary account metas
       ],
       programId: this.programId,
-      data: Buffer.from([AgentInstruction.UpdateVotingPower, ...this.serializeVotingPower(voter, votingPower)])
+      data: Buffer.from([AgentInstruction.UpdateVotingPower, ...voter.toBuffer(), votingPower])
     });
 
     const transaction = new Transaction().add(instruction);
@@ -125,31 +131,20 @@ export class GoverningContract {
   }
 
   private serializeAgentConfig(config: AgentConfig): number[] {
-    // Implement serialization logic
-    return [];
+    const ownerBuffer = config.owner.toBuffer();
+    const descriptionBuffer = Buffer.from(config.description);
+    const votingThresholdBuffer = Buffer.from([config.votingThreshold]);
+    const quorumThresholdBuffer = Buffer.from([config.quorumThreshold]);
+
+    return [
+      ...Array.from(ownerBuffer),
+      ...Array.from(descriptionBuffer),
+      ...Array.from(votingThresholdBuffer),
+      ...Array.from(quorumThresholdBuffer),
+    ];
   }
 
-  private serializeProposal(proposal: Omit<Proposal, 'id' | 'votes' | 'executed'>): number[] {
-    // Implement serialization logic
-    return [];
-  }
-
-  private serializeVote(proposalId: number, voteIndex: number): number[] {
-    // Implement serialization logic
-    return [];
-  }
-
-  private serializeProposalExecution(proposalId: number): number[] {
-    // Implement serialization logic
-    return [];
-  }
-
-  private serializeDelegation(delegateTo: PublicKey): number[] {
-    // Implement serialization logic
-    return [];
-  }
-
-  private serializeVotingPower(voter: PublicKey, votingPower: number): number[] {
+  private serializeProposal(proposal: any): number[] {
     // Implement serialization logic
     return [];
   }
