@@ -79,13 +79,13 @@ const CreateAgent = () => {
       <Header />
       <main className="container py-16">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="mb-12">
             <div className="space-y-4">
               <h1 className="text-4xl font-bold animate-fade-in">Create Custom Agent</h1>
               <p className="text-muted-foreground text-lg">
                 Design and configure your AI agent with advanced capabilities and custom behaviors.
               </p>
-              <div className="grid grid-cols-2 gap-4 mt-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
                 <Card className="p-4 hover:border-primary transition-colors animate-fade-in">
                   <CardContent className="space-y-2 p-0">
                     <Cpu className="h-8 w-8 text-primary" />
@@ -115,14 +115,6 @@ const CreateAgent = () => {
                   </CardContent>
                 </Card>
               </div>
-            </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg -z-10 animate-pulse" />
-              <img
-                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e"
-                alt="AI Agent Creation"
-                className="rounded-lg object-cover w-full h-full opacity-80"
-              />
             </div>
           </div>
 
