@@ -3,22 +3,22 @@ import { Bot, Code2, Settings, Link } from "lucide-react";
 const features = [
   {
     title: "AI Agents",
-    description: "Build custom AI agents without code (.1 SOL)",
+    description: "Build custom AI agents without code",
     icon: Bot,
   },
   {
     title: "Rust-Powered",
-    description: "Built on reliable Rust infrastructure (.1 SOL)",
+    description: "Built on reliable Rust infrastructure",
     icon: Code2,
   },
   {
     title: "RIG",
-    description: "Powered by RIG framework (.1 SOL)",
+    description: "Powered by RIG framework",
     icon: Settings,
   },
   {
     title: "Sol",
-    description: "Can be integrated with any Sol-based project (.1 SOL)",
+    description: "Can be integrated with any Sol-based project",
     icon: Link,
   },
 ];
