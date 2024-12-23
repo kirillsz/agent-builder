@@ -1,12 +1,32 @@
 import React from 'react';
-import { Header } from '@/components/Header';
-import { Code, LineChart, Clock, Settings, Activity, Lock } from 'lucide-react';
+import { Header } from "@/components/Header";
 import { motion } from 'framer-motion';
+import { Code, LineChart, Clock, Settings, Activity, Lock, Bot, Cpu, Workflow, Rocket } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { MarketAnalysisForm } from '@/components/market-analysis/MarketAnalysisForm';
 
 const MarketAnalysisFeatures = () => {
   const features = [
+    {
+      icon: <Bot className="w-12 h-12 text-emerald-500" />,
+      title: "AI Agents",
+      description: "Build custom AI agents without code"
+    },
+    {
+      icon: <Cpu className="w-12 h-12 text-blue-500" />,
+      title: "Rust-Powered",
+      description: "Built on reliable Rust infrastructure"
+    },
+    {
+      icon: <Workflow className="w-12 h-12 text-purple-500" />,
+      title: "RIG",
+      description: "Powered by RIG framework"
+    },
+    {
+      icon: <Rocket className="w-12 h-12 text-yellow-500" />,
+      title: "Sol",
+      description: "Launchpad for Sol based projects"
+    },
     {
       icon: <Code className="w-12 h-12 text-blue-500" />,
       title: "Configurable Trading Agents",
