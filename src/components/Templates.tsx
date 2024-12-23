@@ -142,6 +142,7 @@ export const Templates = () => {
         };
         
         await realEstateContract.createAgent(config);
+        navigate('/real-estate-features');
         
         console.log("Real Estate Investment Analyzer clicked:", template);
       } catch (error) {

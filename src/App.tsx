@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { WalletProvider } from "@/components/WalletProvider";
 import Index from "./pages/Index";
 import DeFiBotFeatures from "./pages/DeFiBotFeatures";
+import RealEstateFeatures from "./pages/RealEstateFeatures";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/defi-bot-features" element={<DeFiBotFeatures />} />
+            <Route path="/real-estate-features" element={<RealEstateFeatures />} />
           </Routes>
         </BrowserRouter>
       </WalletProvider>
