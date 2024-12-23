@@ -12,48 +12,48 @@ export const templates = [
     description: "Create AI agents for market analysis and trading signals",
     icon: ChartBar,
     category: "advanced",
-    arcRequired: "150 ARC"
+    arcRequired: ".1 SOL"
   },
   {
     title: "DAO Governance Agent",
     description: "Automate DAO governance and proposal management",
     icon: Brain,
     category: "beginner",
-    arcRequired: "50 ARC"
+    arcRequired: ".1 SOL"
   },
   {
     title: "DeFi Trading Bot",
     description: "Build automated trading bots for DeFi protocols",
     icon: Bot,
     category: "intermediate",
-    arcRequired: "100 ARC"
+    arcRequired: ".1 SOL"
   },
   {
     title: "Real Estate Investment Analyzer Agent",
     description: "Analyze real estate investment opportunities",
     icon: Database,
     category: "advanced",
-    arcRequired: "250 ARC"
+    arcRequired: ".1 SOL"
   },
   {
     title: "Liquidity Pool Optimizer",
     description: "Optimize liquidity pool positions and yields",
     icon: Coins,
     category: "advanced",
-    arcRequired: "200 ARC"
+    arcRequired: ".1 SOL"
   },
   {
     title: "MEV Protection Agent",
     description: "Protect transactions from MEV and frontrunning",
     icon: Shield,
     category: "intermediate",
-    arcRequired: "150 ARC"
+    arcRequired: ".1 SOL"
   },
   {
     title: "NFT Market Intelligence",
     description: "Track and analyze NFT market trends",
     icon: Rocket,
     category: "advanced",
-    arcRequired: "225 ARC"
+    arcRequired: ".1 SOL"
   },
 ];
