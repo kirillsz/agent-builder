@@ -9,6 +9,7 @@ import CreateAgent from "./pages/CreateAgent";
 import DeFiBotFeatures from "./pages/DeFiBotFeatures";
 import RealEstateFeatures from "./pages/RealEstateFeatures";
 import MarketAnalysisFeatures from "./pages/MarketAnalysisFeatures";
+import DAOGovernanceFeatures from "./pages/DAOGovernanceFeatures";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
             <Route path="/defi-bot-features" element={<DeFiBotFeatures />} />
             <Route path="/real-estate-features" element={<RealEstateFeatures />} />
             <Route path="/market-analysis-features" element={<MarketAnalysisFeatures />} />
+            <Route path="/dao-governance-features" element={<DAOGovernanceFeatures />} />
           </Routes>
         </BrowserRouter>
       </WalletProvider>
