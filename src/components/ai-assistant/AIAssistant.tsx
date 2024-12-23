@@ -1,32 +1,18 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/components/ui/use-toast";
-import { Loader2, Key, X } from "lucide-react";
-import { useOpenAI } from '@/hooks/useOpenAI';
+import { Loader2 } from "lucide-react";
 
 export const AIAssistant = () => {
   const [prompt, setPrompt] = useState('');
   const [response, setResponse] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [showKeyInput, setShowKeyInput] = useState(false);
-  const [tempKey, setTempKey] = useState('');
   const { toast } = useToast();
-  const { apiKey, saveApiKey, clearApiKey } = useOpenAI();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!apiKey) {
-      toast({
-        title: "API Key Required",
-        description: "Please add your OpenAI API key first",
-        variant: "destructive",
-      });
-      return;
-    }
-
     setIsLoading(true);
 
     try {
@@ -34,7 +20,7 @@ export const AIAssistant = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`
+          'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
         },
         body: JSON.stringify({
           model: "gpt-4",
@@ -62,7 +48,7 @@ export const AIAssistant = () => {
       console.error('Error:', error);
       toast({
         title: "Error",
-        description: "Failed to get AI assistance. Please check your API key and try again.",
+        description: "Failed to get AI assistance. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -70,71 +56,12 @@ export const AIAssistant = () => {
     }
   };
 
-  const handleSaveKey = () => {
-    if (tempKey.trim()) {
-      saveApiKey(tempKey.trim());
-      setShowKeyInput(false);
-      setTempKey('');
-      toast({
-        title: "Success",
-        description: "API key has been saved",
-      });
-    }
-  };
-
   return (
     <Card className="w-full max-w-2xl mx-auto mt-6">
-      <CardHeader className="flex flex-row items-center justify-between">
+      <CardHeader>
         <CardTitle>AI Assistant for Agent Development</CardTitle>
-        {apiKey ? (
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => {
-              clearApiKey();
-              toast({
-                title: "API Key Removed",
-                description: "Your OpenAI API key has been removed",
-              });
-            }}
-          >
-            <X className="h-4 w-4" />
-          </Button>
-        ) : (
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => setShowKeyInput(true)}
-          >
-            <Key className="h-4 w-4" />
-          </Button>
-        )}
       </CardHeader>
       <CardContent>
-        {showKeyInput && !apiKey && (
-          <div className="mb-4 space-y-2">
-            <Input
-              type="password"
-              placeholder="Enter your OpenAI API key"
-              value={tempKey}
-              onChange={(e) => setTempKey(e.target.value)}
-            />
-            <div className="flex gap-2">
-              <Button onClick={handleSaveKey} className="flex-1">
-                Save API Key
-              </Button>
-              <Button 
-                variant="outline" 
-                onClick={() => {
-                  setShowKeyInput(false);
-                  setTempKey('');
-                }}
-              >
-                Cancel
-              </Button>
-            </div>
-          </div>
-        )}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <Textarea
@@ -146,7 +73,7 @@ export const AIAssistant = () => {
           </div>
           <Button 
             type="submit" 
-            disabled={isLoading || !prompt.trim() || !apiKey}
+            disabled={isLoading || !prompt.trim()}
             className="w-full"
           >
             {isLoading ? (
