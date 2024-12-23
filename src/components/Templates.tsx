@@ -1,5 +1,12 @@
 import { Bot, Database, Shield, Rocket, ChartBar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Connection, clusterApiUrl, PublicKey } from '@solana/web3.js';
+import { DeFiTradingContract } from "../contracts/DeFiTradingContract";
+
+// Initialize Solana connection and contract
+const connection = new Connection(clusterApiUrl('devnet'));
+const programId = new PublicKey('Your_Program_ID_Here'); // Replace with actual program ID
+const tradingContract = new DeFiTradingContract(connection, programId);
 
 const templates = [
   {
@@ -8,6 +15,7 @@ const templates = [
     category: "advanced",
     arcRequired: "200 ARC",
     icon: Database,
+    contract: tradingContract,
   },
   {
     title: "MEV Protection Agent",
