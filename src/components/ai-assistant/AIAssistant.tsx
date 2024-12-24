@@ -38,33 +38,31 @@ export const AIAssistant = () => {
   };
 
   return (
-    <div className="space-y-4 max-w-4xl mx-auto">
-      <Card>
-        <CardHeader>
-          <CardTitle>AI Assistant</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <Textarea
-            placeholder="Ask me anything about agent development..."
-            value={prompt}
-            onChange={(e) => setPrompt(e.target.value)}
-            className="min-h-[100px]"
-          />
-          <Button 
-            onClick={handleSubmit} 
-            disabled={isLoading || !prompt.trim()}
-            className="w-full"
-          >
-            {isLoading ? "Thinking..." : "Get AI Assistance"}
-          </Button>
-          
-          {response && (
-            <div className="mt-4 p-4 bg-muted rounded-lg">
-              <pre className="whitespace-pre-wrap">{response}</pre>
-            </div>
-          )}
-        </CardContent>
-      </Card>
-    </div>
+    <Card>
+      <CardHeader>
+        <CardTitle>Ask AI Assistant</CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <Textarea
+          placeholder="Ask me anything about creating and configuring your agent..."
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+          className="min-h-[100px]"
+        />
+        <Button 
+          onClick={handleSubmit} 
+          disabled={isLoading || !prompt.trim()}
+          className="w-full"
+        >
+          {isLoading ? "Thinking..." : "Get AI Assistance"}
+        </Button>
+        
+        {response && (
+          <div className="mt-4 p-4 bg-muted rounded-lg">
+            <pre className="whitespace-pre-wrap">{response}</pre>
+          </div>
+        )}
+      </CardContent>
+    </Card>
   );
 };
