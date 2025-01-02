@@ -16,7 +16,7 @@ export const Hero = () => {
           />
         </span>
         <span>with </span>
-        <span className="text-emerald-500 ml-2">
+        <span className="text-emerald-500">
           <HyperText 
             text="SOL" 
             duration={600}
