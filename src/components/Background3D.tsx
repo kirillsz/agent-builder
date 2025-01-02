@@ -17,31 +17,31 @@ export const Background3D = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     containerRef.current.appendChild(renderer.domElement);
 
-    // Add stronger ambient light
-    const ambientLight = new THREE.AmbientLight(0x404040, 4); // Increased intensity
+    // Add subtle ambient light
+    const ambientLight = new THREE.AmbientLight(0xF2FCE2, 2); // Soft green ambient light
     scene.add(ambientLight);
 
-    // Add stronger directional light
-    const directionalLight = new THREE.DirectionalLight(0x6366f1, 4); // Increased intensity
+    // Add directional light with subtle green tint
+    const directionalLight = new THREE.DirectionalLight(0xF2FCE2, 2);
     directionalLight.position.set(1, 1, 1);
     scene.add(directionalLight);
 
-    // Create more particles with much larger size
+    // Create particles with subtle green color
     const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCount = 3000; // Increased particle count
+    const particlesCount = 2000;
     const posArray = new Float32Array(particlesCount * 3);
 
     for (let i = 0; i < particlesCount * 3; i++) {
-      posArray[i] = (Math.random() - 0.5) * 15; // Increased spread
+      posArray[i] = (Math.random() - 0.5) * 10;
     }
 
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
 
     const particlesMaterial = new THREE.PointsMaterial({
-      size: 0.05, // Significantly increased size
-      color: 0x6366f1,
+      size: 0.03,
+      color: 0xF2FCE2, // Soft green color
       transparent: true,
-      opacity: 1, // Full opacity
+      opacity: 0.4, // More subtle opacity
       blending: THREE.AdditiveBlending,
       sizeAttenuation: true,
     });
@@ -49,22 +49,22 @@ export const Background3D = () => {
     const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
     scene.add(particlesMesh);
 
-    // Add a second particle system with different properties
+    // Second particle system with even more subtle properties
     const particles2Geometry = new THREE.BufferGeometry();
-    const particles2Count = 2000;
+    const particles2Count = 1500;
     const pos2Array = new Float32Array(particles2Count * 3);
 
     for (let i = 0; i < particles2Count * 3; i++) {
-      pos2Array[i] = (Math.random() - 0.5) * 12;
+      pos2Array[i] = (Math.random() - 0.5) * 8;
     }
 
     particles2Geometry.setAttribute('position', new THREE.BufferAttribute(pos2Array, 3));
 
     const particles2Material = new THREE.PointsMaterial({
-      size: 0.04,
-      color: 0x4338ca,
+      size: 0.02,
+      color: 0xF2FCE2, // Matching soft green
       transparent: true,
-      opacity: 1,
+      opacity: 0.3, // Even more subtle
       blending: THREE.AdditiveBlending,
       sizeAttenuation: true,
     });
@@ -72,24 +72,24 @@ export const Background3D = () => {
     const particles2Mesh = new THREE.Points(particles2Geometry, particles2Material);
     scene.add(particles2Mesh);
 
-    // Position camera closer to see particles better
-    camera.position.z = 6;
+    // Position camera closer to bring particles to forefront
+    camera.position.z = 3;
 
-    // Animation with enhanced movement
+    // Animation
     const animate = () => {
       requestAnimationFrame(animate);
       
-      // First particle system rotation with increased speed
-      particlesMesh.rotation.x += 0.002;
-      particlesMesh.rotation.y += 0.002;
+      // Gentle rotation for first particle system
+      particlesMesh.rotation.x += 0.0005;
+      particlesMesh.rotation.y += 0.0005;
       
-      // Second particle system opposite rotation
-      particles2Mesh.rotation.x -= 0.003;
-      particles2Mesh.rotation.y -= 0.003;
+      // Subtle opposite rotation for second system
+      particles2Mesh.rotation.x -= 0.0007;
+      particles2Mesh.rotation.y -= 0.0007;
 
-      // Add more pronounced wave motion
-      particlesMesh.position.y = Math.sin(Date.now() * 0.001) * 0.3;
-      particles2Mesh.position.y = Math.cos(Date.now() * 0.001) * 0.3;
+      // Very subtle wave motion
+      particlesMesh.position.y = Math.sin(Date.now() * 0.0005) * 0.2;
+      particles2Mesh.position.y = Math.cos(Date.now() * 0.0005) * 0.2;
 
       renderer.render(scene, camera);
     };
@@ -124,7 +124,7 @@ export const Background3D = () => {
       className="fixed inset-0 -z-10 pointer-events-none"
       style={{ 
         background: 'linear-gradient(to bottom, #000000, #1a1a1a)',
-        opacity: 1 // Full opacity for better visibility
+        opacity: 0.95 // Slightly transparent to blend with background
       }}
     />
   );
