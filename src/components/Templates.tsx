@@ -7,8 +7,7 @@ import { MarketAnalysisContract } from "../contracts/MarketAnalysisContract";
 import { useToast } from "@/components/ui/use-toast";
 import { useNavigate } from "react-router-dom";
 import { TimeFrame } from "../types/TimeFrame";
-import { TemplateCard } from "./templates/TemplateCard";
-import { templates } from "./templates/templateUtils";
+import { BentoCard, BentoGrid } from "./ui/bento";
 
 // Initialize Solana connection and contracts
 const connection = new Connection(clusterApiUrl('devnet'));
@@ -169,15 +168,21 @@ export const Templates = () => {
   return (
     <div className="container py-16">
       <h2 className="text-3xl font-bold mb-8">Templates</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <BentoGrid>
         {templates.map((template) => (
-          <TemplateCard
+          <BentoCard
             key={template.title}
-            {...template}
+            name={template.title}
+            className="animate-fade-in"
+            background={<div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-950/30 dark:to-emerald-900/30" />}
+            Icon={template.icon}
+            description={template.description}
+            href="#"
+            cta="Get Started"
             onClick={() => handleTemplateClick(template)}
           />
         ))}
-      </div>
+      </BentoGrid>
     </div>
   );
 };
