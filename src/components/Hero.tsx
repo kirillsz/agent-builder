@@ -12,6 +12,7 @@ export const Hero = () => {
       </h1>
       <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
         Create, deploy, and manage AI agents on Solana using our decentralized platform.
+        All development changes now go to the dev branch.
       </p>
       <div className="flex gap-4">
         <Button 
