@@ -7,13 +7,9 @@ export const Hero = () => {
 
   return (
     <div className="container flex flex-col items-center justify-center space-y-8 py-24 text-center animate-fade-in">
-      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-        <HyperText 
-          text="Build AI Agents with" 
-          className="mr-2"
-          duration={1200}
-        />
-        <span className="text-emerald-500">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight flex items-center justify-center">
+        <span>Build AI Agents with </span>
+        <span className="text-emerald-500 ml-2">
           <HyperText 
             text="SOL" 
             duration={600}
