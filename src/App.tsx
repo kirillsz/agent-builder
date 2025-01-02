@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { WalletProvider } from "@/components/WalletProvider";
+import { MainLayout } from "@/components/layouts/MainLayout";
 import Index from "./pages/Index";
 import CreateAgent from "./pages/CreateAgent";
 import Marketplace from "./pages/Marketplace";
@@ -25,19 +26,21 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/create-agent" element={<CreateAgent />} />
-            <Route path="/marketplace" element={<Marketplace />} />
-            <Route path="/agent-dashboard" element={<AgentDashboard />} />
-            <Route path="/defi-bot-features" element={<DeFiBotFeatures />} />
-            <Route path="/real-estate-features" element={<RealEstateFeatures />} />
-            <Route path="/market-analysis-features" element={<MarketAnalysisFeatures />} />
-            <Route path="/dao-governance-features" element={<DAOGovernanceFeatures />} />
-            <Route path="/nft-market-features" element={<NFTMarketFeatures />} />
-            <Route path="/liquidity-pool-features" element={<LiquidityPoolFeatures />} />
-            <Route path="/mev-protection-features" element={<MEVProtectionFeatures />} />
-          </Routes>
+          <MainLayout>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/create-agent" element={<CreateAgent />} />
+              <Route path="/marketplace" element={<Marketplace />} />
+              <Route path="/agent-dashboard" element={<AgentDashboard />} />
+              <Route path="/defi-bot-features" element={<DeFiBotFeatures />} />
+              <Route path="/real-estate-features" element={<RealEstateFeatures />} />
+              <Route path="/market-analysis-features" element={<MarketAnalysisFeatures />} />
+              <Route path="/dao-governance-features" element={<DAOGovernanceFeatures />} />
+              <Route path="/nft-market-features" element={<NFTMarketFeatures />} />
+              <Route path="/liquidity-pool-features" element={<LiquidityPoolFeatures />} />
+              <Route path="/mev-protection-features" element={<MEVProtectionFeatures />} />
+            </Routes>
+          </MainLayout>
         </BrowserRouter>
       </WalletProvider>
     </TooltipProvider>
