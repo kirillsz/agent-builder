@@ -59,7 +59,7 @@ export const AIAssistant = () => {
         
         {response && (
           <div className="mt-4 p-4 bg-muted rounded-lg">
-            <pre className="whitespace-pre-wrap">{response}</pre>
+            <pre className="whitespace-pre-wrap text-white">{response}</pre>
           </div>
         )}
       </CardContent>
