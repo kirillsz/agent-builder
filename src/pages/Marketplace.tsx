@@ -6,7 +6,7 @@ const Marketplace = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="container py-16">
+      <main className="container pb-16 pt-20">
         <div className="flex flex-col md:flex-row gap-6">
           <aside className="w-full md:w-64">
             <MarketplaceFilters />

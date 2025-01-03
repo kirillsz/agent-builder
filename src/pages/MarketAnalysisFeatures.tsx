@@ -8,7 +8,7 @@ import { MarketAnalysisForm } from '@/components/market-analysis/MarketAnalysisF
 const MarketAnalysisFeatures = () => {
   const features = [
     {
-      icon: <Bot className="w-12 h-12 text-emerald-500" />,
+      icon: <Bot className="w-12 h-12 text-cyan-500" />,
       title: "AI Agents",
       description: "Build custom AI agents without code (.1 SOL)"
     },
@@ -65,7 +65,7 @@ const MarketAnalysisFeatures = () => {
       <main className="pt-24">
         <div className="container mx-auto px-6">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 animate-fade-in">
-            Market Analysis <span className="text-emerald-500">Features</span>
+            Market Analysis <span className="text-cyan-500">Features</span>
           </h1>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">

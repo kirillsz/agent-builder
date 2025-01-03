@@ -3,22 +3,22 @@ import { Bot, Code2, Settings, Link } from "lucide-react";
 const features = [
   {
     title: "AI Agents",
-    description: "Build custom AI agents without code",
+    description: "Develop personalized AI agents without writing any code",
     icon: Bot,
   },
   {
     title: "Rust-Powered",
-    description: "Built on reliable Rust infrastructure",
+    description: "Based on a robust Rust foundation.",
     icon: Code2,
   },
   {
     title: "RIG",
-    description: "Powered by RIG framework",
+    description: "Utilizing the RIG platform.",
     icon: Settings,
   },
   {
     title: "Sol",
-    description: "Can be integrated with any Sol-based project",
+    description: "Can be integrated into any project that uses Sol",
     icon: Link,
   },
 ];
@@ -33,7 +33,7 @@ export const Features = () => {
             className="flex flex-col items-center text-center space-y-4 animate-fade-in"
           >
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10">
-              <feature.icon className="h-8 w-8 text-emerald-500" />
+              <feature.icon className="h-8 w-8 text-cyan-500" />
             </div>
             <h3 className="text-xl font-bold">{feature.title}</h3>
             <p className="text-muted-foreground">{feature.description}</p>

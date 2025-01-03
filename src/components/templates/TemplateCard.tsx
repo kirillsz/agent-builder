@@ -24,7 +24,7 @@ export const TemplateCard = ({
     onClick={onClick}
   >
     <div className="flex items-center gap-4 mb-4">
-      <Icon className="h-8 w-8 text-emerald-500" />
+      <Icon className="h-8 w-8 text-cyan-500" />
       <Badge className={categoryColors[category as keyof typeof categoryColors]}>
         {category}
       </Badge>

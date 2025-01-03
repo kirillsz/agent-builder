@@ -13,7 +13,7 @@ export const FeatureCard = ({ icon: Icon, title, description }: FeatureCardProps
     <CardContent className="p-0">
       <div className="flex items-start space-x-4">
         <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/10">
-          <Icon className="h-6 w-6 text-emerald-500" />
+          <Icon className="h-6 w-6 text-cyan-500" />
         </div>
         <div>
           <h3 className="text-lg font-bold text-foreground mb-2">{title}</h3>

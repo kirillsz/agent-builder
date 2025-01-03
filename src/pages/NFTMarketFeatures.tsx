@@ -45,7 +45,7 @@ const NFTMarketFeatures = () => {
       <main className="pt-24">
         <div className="container mx-auto px-6">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 animate-fade-in">
-            NFT Market <span className="text-emerald-500">Intelligence</span>
+            NFT Market <span className="text-cyan-500">Intelligence</span>
           </h1>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">

@@ -9,42 +9,42 @@ export const categoryColors = {
 export const templates = [
   {
     title: "DAO Governance Agent",
-    description: "Automate DAO governance and proposal management",
+    description: "Implement automated processes for DAO administration and proposal handling",
     icon: Brain,
     category: "beginner",
     arcRequired: ".1 SOL"
   },
   {
     title: "DeFi Trading Bot",
-    description: "Build automated trading bots for DeFi protocols",
+    description: "Develop automated trading bots for decentralized finance (DeFi) protocols",
     icon: Bot,
     category: "intermediate",
     arcRequired: ".1 SOL"
   },
   {
     title: "Real Estate Investment Analyzer Agent",
-    description: "Analyze real estate investment opportunities",
+    description: "Examine potential investments in real estate.",
     icon: Database,
     category: "advanced",
     arcRequired: ".1 SOL"
   },
   {
     title: "Liquidity Pool Optimizer",
-    description: "Optimize liquidity pool positions and yields",
+    description: "Enhance the profitability of liquidity pool positions.",
     icon: Coins,
     category: "advanced",
     arcRequired: ".1 SOL"
   },
   {
     title: "MEV Protection Agent",
-    description: "Protect transactions from MEV and frontrunning",
+    description: "Safeguard transactions against MEV and frontrunning",
     icon: Shield,
     category: "intermediate",
     arcRequired: ".1 SOL"
   },
   {
     title: "NFT Market Intelligence",
-    description: "Track and analyze NFT market trends",
+    description: "Keep track of and analyze NFT market trends.",
     icon: Rocket,
     category: "advanced",
     arcRequired: ".1 SOL"

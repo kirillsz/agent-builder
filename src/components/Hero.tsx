@@ -16,7 +16,7 @@ export const Hero = () => {
           />
         </span>
         <span>with&nbsp;</span>
-        <span className="text-emerald-500">
+        <span className="text-cyan-500">
           <HyperText 
             text="SOL" 
             duration={600}
@@ -24,13 +24,12 @@ export const Hero = () => {
         </span>
       </h1>
       <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-        Create, deploy, and manage AI agents on Solana using our decentralized platform.
-        All development changes now go to the dev branch.
+      Our decentralized platform empowers developers and businesses to create, deploy, and manage advanced AI agents on Solana while prioritizing security, customization, and future-proof capabilities. 
       </p>
       <div className="flex gap-4">
         <Button 
           size="lg" 
-          className="bg-white text-black hover:bg-gray-100"
+          className="bg-black text-white"
           onClick={() => navigate("/create-agent")}
         >
           Start Building

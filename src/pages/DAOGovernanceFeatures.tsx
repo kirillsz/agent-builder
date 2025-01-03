@@ -45,7 +45,7 @@ const DAOGovernanceFeatures = () => {
       <main className="pt-24">
         <div className="container mx-auto px-6">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 animate-fade-in">
-            DAO Governance <span className="text-emerald-500">Features</span>
+            DAO Governance <span className="text-cyan-500">Features</span>
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (

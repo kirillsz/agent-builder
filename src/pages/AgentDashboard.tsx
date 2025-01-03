@@ -17,7 +17,7 @@ const AgentDashboard = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 pb-8 pt-20">
         <h1 className="text-4xl font-bold mb-8">Agent Performance Dashboard</h1>
         
         {/* Stats Grid */}
@@ -28,7 +28,7 @@ const AgentDashboard = () => {
                 <p className="text-sm font-medium text-muted-foreground">Success Rate</p>
                 <h3 className="text-2xl font-bold">95.8%</h3>
               </div>
-              <Activity className="h-8 w-8 text-emerald-500" />
+              <Activity className="h-8 w-8 text-cyan-500" />
             </div>
           </Card>
           
@@ -71,15 +71,15 @@ const AgentDashboard = () => {
               className="h-[300px]"
               config={{
                 tasks: {
-                  color: "#10b981",
+                  color: "#163ece",
                 },
               }}
             >
               <AreaChart data={performanceData}>
                 <defs>
                   <linearGradient id="colorTasks" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#10b981" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
+                    <stop offset="5%" stopColor="#163ece" stopOpacity={0.8}/>
+                    <stop offset="95%" stopColor="#163ece" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
                 <XAxis
@@ -100,7 +100,7 @@ const AgentDashboard = () => {
                 <Area
                   type="monotone"
                   dataKey="tasks"
-                  stroke="#10b981"
+                  stroke="#163ece"
                   fillOpacity={1}
                   fill="url(#colorTasks)"
                 />

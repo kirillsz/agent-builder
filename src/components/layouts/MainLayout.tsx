@@ -15,7 +15,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
           background="transparent"
           minSize={0.6}
           maxSize={1.4}
-          particleColor="#F2FCE2"
+          particleColor="#000"
           particleDensity={100}
           speed={2}
           className="h-full w-full"
